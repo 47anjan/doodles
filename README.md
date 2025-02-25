@@ -16,13 +16,6 @@ Welcome to our **AI-Powered Recipe Discovery App**! Discover, cook, and interact
 
 - Automatically generate a shopping list for any recipe, including quantities and optional ingredients.
 
-### **User Experience**
-
-- **Secure Authentication**: Powered by Clerk with social login support.
-- **Smart Favorites**: Save recipes with AI-generated reminders.
-- **Cooking Progress Tracker**: Interactive timeline with AI tips.
-- **Real-Time Notifications**: Get updates on cooking milestones.
-
 ### **Core Features**
 
 - **Global Recipe Database**: 500,000+ recipes via Spoonacular API.
