@@ -107,7 +107,7 @@ Provide precise, professional answers using metric measurements. When suggesting
         <Button className="bg-orange text-white">Ask About This Recipe</Button>
       </DrawerTrigger>
       <DrawerContent>
-        <div className="p-4 pb-0">
+        <div className="p-4 pb-0 select-text">
           <div className="">
             <div className="rounded-lg border bg-background p-4">
               <div className="mb-4 h-[65vh] overflow-y-auto space-y-4">

@@ -104,17 +104,17 @@ Provide precise, scientific answers using metric measurements. Include storage r
   return (
     <Drawer>
       <DrawerTrigger asChild>
-        <Button className="bg-orange w-full text-white">
+        <Button className="bg-orange  w-full text-white">
           Ask About This Ingredient
         </Button>
       </DrawerTrigger>
       <DrawerContent>
-        <div className="p-4 pb-0">
+        <div className="p-4 pb-0 select-text">
           <div className="">
             <div className="rounded-lg border bg-background p-4">
               <div className="mb-4 h-[65vh] overflow-y-auto space-y-4">
                 {messages.length === 0 && (
-                  <div className="text-gray-500 text-center py-4">
+                  <div className="text-gray-500  text-center py-4">
                     Need assistance with {ingredient.name}? I can provide
                     guidance on ingredient substitutions, precise measurements,
                     and step-by-step instructions.
@@ -133,7 +133,7 @@ Provide precise, scientific answers using metric measurements. Include storage r
                         m.role === "user" ? "bg-muted" : "bg-muted"
                       }`}
                     >
-                      <div className="flex justify-between items-center gap-2 text-sm font-medium text-foreground/70 mb-1">
+                      <div className="flex  justify-between items-center gap-2 text-sm font-medium text-foreground/70 mb-1">
                         <span>{m.role === "user" ? "You" : "Steve"}</span>
                         {m.role !== "user" && (
                           <button
