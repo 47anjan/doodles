@@ -8,7 +8,7 @@ import { UserProfile } from "@clerk/nextjs";
 const AccountPage = () => {
   return (
     <div>
-      <section className="grid items-center gap-8 pb-8 pt-6 md:py-8 overflow-hidden">
+      <section className="grid items-center gap-8 pb-8  md:pb-8 overflow-hidden">
         <PageHeader>
           <PageHeaderHeading size="sm">Account</PageHeaderHeading>
           <PageHeaderDescription size="sm">
@@ -17,7 +17,6 @@ const AccountPage = () => {
         </PageHeader>
         <ScrollArea className="w-full pb-3.5">
           <UserProfile />
-
           <ScrollBar orientation="horizontal" />
         </ScrollArea>
       </section>
