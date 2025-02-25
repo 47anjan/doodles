@@ -58,12 +58,12 @@ const IngredientInformation = async ({ params, searchParams }: Params) => {
   const sortedNutrients = [...ingredient.nutrition.nutrients].sort((a, b) => {
     if (a.unit === "kcal" && b.unit !== "kcal") return -1;
     if (b.unit === "kcal" && a.unit !== "kcal") return 1;
-    if (a.unit === "IU") return 1;
-    if (b.unit === "IU") return -1;
+    // if (a.unit === "IU") return 1;
+    // if (b.unit === "IU") return -1;
 
     const convertToGrams = (nutrient: any) => {
-      if (nutrient.unit === "mg") return nutrient.amount / 1000;
-      if (nutrient.unit === "µg") return nutrient.amount / 1000000;
+      // if (nutrient.unit === "mg") return nutrient.amount / 1000;
+      // if (nutrient.unit === "µg") return nutrient.amount / 1000000;
       return nutrient.amount;
     };
 
