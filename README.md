@@ -1,6 +1,3 @@
-Here’s the reformatted version of your README with improved structure, readability, and consistency:
-
-````markdown
 # Recipe Discovery App 🍳
 
 Welcome to our **AI-Powered Recipe Discovery App**! Discover, cook, and interact with recipes using cutting-edge AI features. This application helps food enthusiasts explore global cuisines, get cooking assistance, and manage their culinary journey.
@@ -61,11 +58,11 @@ Welcome to our **AI-Powered Recipe Discovery App**! Discover, cook, and interact
 ## 🚀 Getting Started
 
 1. **Clone Repository**
+
    ```bash
    git clone https://github.com/47anjan/doodles.git
    cd doodles
    ```
-````
 
 2. **Install Dependencies**
 
