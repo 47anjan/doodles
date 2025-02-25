@@ -31,7 +31,6 @@ Welcome to our **AI-Powered Recipe Discovery App**! Discover, cook, and interact
 - Next.js 14 (App Router)
 - TypeScript
 - Tailwind CSS + Shadcn UI
-- React Hot Toast for notifications
 
 ### **Backend**
 
