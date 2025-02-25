@@ -17,9 +17,9 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
     <>
       <SidebarProvider>
         <AppSidebar />
-        <main>
+        <main className="flex-1">
           <SidebarTrigger />
-          <div className="p-5">{children}</div>
+          <div className="p-5 ">{children}</div>
         </main>
       </SidebarProvider>
     </>
