@@ -1,6 +1,6 @@
 "use client";
 
-import { RecipeDetails } from "@/lib/types";
+import { IngredientDetails } from "@/lib/types";
 import { useChat } from "ai/react";
 import { useEffect, useRef } from "react";
 import ReactMarkdown from "react-markdown";
@@ -16,69 +16,69 @@ import {
 import { Button } from "@/components/ui/button";
 
 interface ChatProps {
-  recipe: RecipeDetails;
+  ingredient: IngredientDetails;
 }
 
-export default function RecipeChat({ recipe }: ChatProps) {
-  const systemPrompt = `You are a professional chef assistant for the recipe "${
-    recipe.title
-  }". Use these comprehensive details to answer questions:
+export default function IngredientChat({ ingredient }: ChatProps) {
+  const systemPrompt = `You are a food science expert analyzing **${
+    ingredient.name
+  }**. Use this detailed technical profile:
 
-**Recipe Overview:**
-- Cuisine: ${recipe.cuisines?.join(", ") || "Not specified"}
-- Dietary: ${[
-    ...(recipe.diets || []),
-    recipe.vegetarian ? "Vegetarian" : null,
-    recipe.vegan ? "Vegan" : null,
-    recipe.glutenFree ? "Gluten-Free" : null,
-  ]
-    .filter(Boolean)
-    .join(", ")}
-- Cook Time: ${recipe.readyInMinutes} minutes
-- Servings: ${recipe.servings}
-- Price/Serving: $${(recipe.pricePerServing / 100).toFixed(2)}
-- Likes: ${recipe.aggregateLikes}
-- Health Score: ${recipe.healthScore}/100
-- Dish Types: ${recipe.dishTypes?.join(", ") || "Not specified"}
+**Core Information:**
+- Category Hierarchy: ${ingredient.categoryPath.join(" › ")}
+- Physical Properties: ${ingredient.consistency}
+- Storage Location: ${ingredient.aisle}
+- Standard Quantity: ${ingredient.amount} ${ingredient.unit}
+- Estimated Cost: $${(ingredient.estimatedCost.value / 100).toFixed(2)} ${
+    ingredient.estimatedCost.unit
+  }
 
-**Ingredients (${recipe.extendedIngredients?.length} items):**
-${recipe.extendedIngredients
-  ?.map(
-    (ing: any) =>
-      `- ${ing.measures.metric.amount} ${ing.measures.metric.unitShort} ${ing.nameClean} (${ing.original})`
+**Nutritional Profile (per ${ingredient.nutrition.weightPerServing.amount}${
+    ingredient.nutrition.weightPerServing.unit
+  } serving):**
+${ingredient.nutrition.nutrients
+  .map(
+    (n) => `- ${n.name}: ${n.amount}${n.unit} (${n.percentOfDailyNeeds}% DV)`
   )
   .join("\n")}
 
-**Nutritional Info per Serving:**
+**Chemical Properties:**
 ${
-  recipe.nutrition?.nutrients
-    ?.filter((n: any) =>
-      ["Calories", "Protein", "Fat", "Carbohydrates", "Fiber"].includes(n.name)
-    )
-    ?.map((n: any) => `- ${n.name}: ${Math.round(n.amount)}${n.unit}`)
-    ?.join("\n") || "Not available"
+  ingredient.nutrition.properties
+    .map((p) => `- ${p.name}: ${p.amount}${p.unit}`)
+    .join("\n") || "No significant chemical properties recorded"
 }
 
-**Cooking Instructions:**
-${
-  recipe.analyzedInstructions[0]?.steps
-    ?.map(
-      (step: any) =>
-        `${step.number}. ${step.step.replace(/<\/?[^>]+(>|$)/g, "")}`
-    )
-    ?.join("\n\n") || "No instructions provided"
-}
+**Category Associations:**
+${ingredient.categoryPath.map((c, i) => `${"  ".repeat(i)}▸ ${c}`).join("\n")}
 
-**Additional Details:**
-- Equipment: ${
-    recipe.analyzedInstructions[0]?.steps
-      ?.flatMap((step: any) => step.equipment.map((e: any) => e.name))
-      ?.filter((v: any, i: any, a: any) => a.indexOf(v) === i)
-      ?.join(", ") || "Standard kitchen equipment"
-  }
-- Meal Types: ${recipe.occasions?.join(", ") || "Not specified"}
+**Expert Analysis Guidelines:**
+1. When discussing nutritional impact, prioritize these key nutrients: 
+   ${ingredient.nutrition.nutrients
+     .filter((n) => n.percentOfDailyNeeds > 5)
+     .map((n) => n.name)
+     .join(", ")}
 
-Provide precise, professional answers using metric measurements. When suggesting substitutions, consider dietary restrictions. Include pro tips for time/cost savings when relevant.`;
+2. Highlight potential allergen cross-contamination risks based on: 
+   ${
+     ingredient.aisle.toLowerCase().includes("dairy")
+       ? "Dairy allergens"
+       : ingredient.aisle.toLowerCase().includes("nuts")
+       ? "Tree nut allergens"
+       : "No major allergen patterns detected"
+   }
+
+3. For substitution suggestions, consider these categories: 
+   ${ingredient.categoryPath.slice(0, 3).join(" › ")}
+
+4. When calculating nutrition for recipes:
+   - Base calculations on ${ingredient.nutrition.weightPerServing.amount}${
+    ingredient.nutrition.weightPerServing.unit
+  } increments
+   - Account for ${ingredient.consistency} texture properties
+   - Consider ${ingredient.estimatedCost.unit} cost units
+
+Provide precise, scientific answers using metric measurements. Include storage recommendations based on aisle location, chemical interactions based on properties, and culinary applications based on texture/consistency.`;
 
   const { messages, input, handleInputChange, handleSubmit, isLoading, error } =
     useChat({
@@ -104,7 +104,9 @@ Provide precise, professional answers using metric measurements. When suggesting
   return (
     <Drawer>
       <DrawerTrigger asChild>
-        <Button className="bg-orange text-white">Ask About This Recipe</Button>
+        <Button className="bg-orange w-full text-white">
+          Ask About This Ingredient
+        </Button>
       </DrawerTrigger>
       <DrawerContent>
         <div className="p-4 pb-0">
@@ -113,8 +115,9 @@ Provide precise, professional answers using metric measurements. When suggesting
               <div className="mb-4 h-[65vh] overflow-y-auto space-y-4">
                 {messages.length === 0 && (
                   <div className="text-gray-500 text-center py-4">
-                    Ask me about {recipe.title}! I can help with substitutions,
-                    measurements, or instructions.
+                    Need assistance with {ingredient.name}? I can provide
+                    guidance on ingredient substitutions, precise measurements,
+                    and step-by-step instructions.
                   </div>
                 )}
 

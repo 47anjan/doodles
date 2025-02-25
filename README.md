@@ -1,60 +1,65 @@
+Here's the updated README incorporating the new features and improvements:
+
+````markdown
 # Recipe Discovery App 🍳
 
-Welcome to our **AI-Powered Recipe Discovery App**! Discover, cook, and interact with recipes using cutting-edge AI features. This application helps food enthusiasts explore global cuisines, get cooking assistance, and manage their culinary journey.
-
----
+Welcome to our AI-Powered Recipe Discovery App! Discover, cook, and interact with recipes using cutting-edge AI features. This application helps food enthusiasts explore global cuisines, get cooking assistance, and manage their culinary journey.
 
 ## 🌟 Features
 
-### **AI-Powered Cooking Assistant**
+- **AI-Powered Cooking Assistant**:
 
-- **Recipe Chat**: Ask detailed questions about ingredients, substitutions, and cooking methods.
-- **Ingredient Chat**: Get nutritional insights and usage suggestions for any ingredient.
-- **Step-by-Step Guidance**: Interactive cooking instructions with real-time help.
+  - **Recipe Chat**: Ask detailed questions about ingredients, substitutions, and cooking methods
+  - **Ingredient Chat**: Get nutritional insights and usage suggestions for any ingredient
+  - **Step-by-Step Guidance**: Interactive cooking instructions with real-time help
 
-### **Grocery List Generation**
+- **Smart Discovery**:
 
-- Automatically generate a shopping list for any recipe, including quantities and optional ingredients.
+  - **AI-Powered Search**: Find recipes using natural language queries
+  - **Dietary Adaptation**: Automatic recipe modification for dietary restrictions
+  - **Personalized Recommendations**: AI-curated suggestions based on your preferences
 
-### **Core Features**
+- **User Experience**:
 
-- **Global Recipe Database**: 500,000+ recipes via Spoonacular API.
-- **Nutritional Analysis**: Detailed breakdowns for every recipe.
-- **Responsive Design**: Flawless experience across all devices.
+  - **Secure Authentication**: Powered by Clerk with social login support
+  - **Smart Favorites**: Save recipes with AI-generated reminders
+  - **Cooking Progress Tracker**: Interactive timeline with AI tips
+  - **Real-Time Notifications**: Get updates on cooking milestones
 
----
+- **Core Features**:
+  - **Global Recipe Database**: 500,000+ recipes via Spoonacular API
+  - **Nutritional Analysis**: Detailed breakdowns for every recipe
+  - **Responsive Design**: Flawless experience across all devices
 
 ## 🛠 Technologies Used
 
-### **Frontend**
+- **Frontend**:
 
-- Next.js 14 (App Router)
-- TypeScript
-- Tailwind CSS + Shadcn UI
+  - Next.js 14 (App Router)
+  - TypeScript
+  - Tailwind CSS + Shadcn UI
+  - React Hot Toast for notifications
 
-### **Backend**
+- **Backend**:
 
-- Next.js Server Actions
-- Clerk Authentication
-- Vercel AI SDK
-- Google Gemini AI
+  - Next.js Server Actions
+  - Clerk Authentication
+  - Vercel AI SDK
+  - Google Gemini AI
 
-### **Services**
-
-- Spoonacular API (Recipe data)
-- Clerk (Authentication)
-- Google AI Studio (LLM)
-
----
+- **Services**:
+  - Spoonacular API (Recipe data)
+  - Clerk (Authentication)
+  - Google AI Studio (LLM)
 
 ## 🚀 Getting Started
 
 1. **Clone Repository**
-
    ```bash
    git clone https://github.com/47anjan/doodles.git
    cd doodles
    ```
+````
 
 2. **Install Dependencies**
 
@@ -81,19 +86,16 @@ Welcome to our **AI-Powered Recipe Discovery App**! Discover, cook, and interact
 5. **Access the App**
    Visit `http://localhost:3000`
 
----
-
 ## 🧠 AI Features Overview
 
-### **Recipe Assistant**
+**Recipe Assistant**:
 
 - Ask questions like:
   - "What can I substitute for eggs in this recipe?"
   - "How do I make this vegetarian?"
-  - "Break down the nutritional content."
-  - "Generate a grocery list for this recipe."
+  - "Break down the nutritional content"
 
-### **Ingredient Expert**
+**Ingredient Expert**:
 
 - Get information about:
   - Nutritional values
@@ -101,53 +103,39 @@ Welcome to our **AI-Powered Recipe Discovery App**! Discover, cook, and interact
   - Seasonal availability
   - Flavor pairings
 
-### **Smart Cooking**
+**Smart Cooking**:
 
-- Real-time conversion between measurement units.
-- Allergy-aware substitutions.
-- Equipment alternatives.
-- Cooking time optimization.
-
----
+- Real-time conversion between measurement units
+- Allergy-aware substitutions
+- Equipment alternatives
+- Cooking time optimization
 
 ## 🔒 Authentication Flow
 
-We use **Clerk** for secure authentication:
+We use Clerk for secure authentication:
 
-- **Social Logins**: Google, GitHub, Facebook.
-- **Magic Link Authentication**.
-- **Session Management**.
-- **User Profile Management**.
-
----
+- Social Logins: Google, GitHub, Facebook
+- Magic Link authentication
+- Session management
+- User profile management
 
 ## 🤝 Contributing
 
 We welcome contributions! Please follow these steps:
 
-1. Fork the repository.
-2. Create a feature branch: `git checkout -b feature/amazing-feature`.
-3. Commit changes: `git commit -m 'Add amazing feature'`.
-4. Push to branch: `git push origin feature/amazing-feature`.
-5. Open a Pull Request.
-
----
+1. Fork the repository
+2. Create feature branch: `git checkout -b feature/amazing-feature`
+3. Commit changes: `git commit -m 'Add amazing feature'`
+4. Push to branch: `git push origin feature/amazing-feature`
+5. Open a Pull Request
 
 ## 📄 License
 
-MIT License - see [LICENSE](LICENSE) for details.
-
----
+MIT License - see [LICENSE](LICENSE) for details
 
 ## 📧 Contact
 
 Have questions or suggestions?  
-Reach out at [anjankarmakar15@gmail.com](mailto:anjankarmakar15@gmail.com).
+Reach out at [anjankarmakar15@gmail.com](mailto:anjankarmakar15@gmail.com)
 
----
-
-Happy Cooking and Coding!
-
-```
-
-```
+Happy Cooking and Coding! 👩🍳👨💻

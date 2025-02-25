@@ -82,6 +82,7 @@ export type SearchIngredient = {
 };
 
 export type RecipeDetails = {
+  nutrition: any;
   id: number;
   title: string;
   image: string;

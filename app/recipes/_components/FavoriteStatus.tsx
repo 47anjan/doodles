@@ -10,7 +10,7 @@ interface Props {
 }
 
 const FavoriteStatus = async (saveRecipe: Props) => {
-  const recipe = await prisma.favoriteRecipe.findFirst({
+  const recipe = await prisma.favoriteRecipe?.findFirst({
     where: {
       recipeId: saveRecipe.recipeId,
       userId: saveRecipe.userId,
