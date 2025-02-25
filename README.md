@@ -157,7 +157,7 @@ Reach out at [anjankarmakar15@gmail.com](mailto:anjankarmakar15@gmail.com).
 
 ---
 
-Happy Cooking and Coding! 👩🍳👨💻
+Happy Cooking and Coding!
 
 ```
 
