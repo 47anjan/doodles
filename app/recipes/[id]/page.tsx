@@ -227,7 +227,11 @@ const RecipeInformation = async ({ params }: Params) => {
                 ))}
               </div>
               <div>
-                <GroceryList ingredients={recipe.extendedIngredients} />
+                <GroceryList
+                  title={recipe.title}
+                  recipeId={recipe.id}
+                  ingredients={recipe.extendedIngredients}
+                />
               </div>
             </div>
           </div>

@@ -2,7 +2,6 @@
 
 import { generateGroceryList, GroceryListSchema } from "@/lib/actions";
 import { useCallback, useState } from "react";
-import { Button } from "../../../components/ui/button";
 import { useUser } from "@clerk/nextjs";
 
 export interface GroceryIngredient {
@@ -11,15 +10,21 @@ export interface GroceryIngredient {
   originalName: string;
 }
 
-interface GroceryListProps {
+export interface GroceryListProps {
   ingredients: GroceryIngredient[];
+  recipeId: number;
+  title: string;
 }
 
-export const GroceryList = ({ ingredients = [] }: GroceryListProps) => {
+export const GroceryList = ({
+  ingredients = [],
+  recipeId,
+  title,
+}: GroceryListProps) => {
   const [showList, setShowList] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const user = useUser();
+  const { user } = useUser();
 
   const [groceryList, setGroceryList] = useState<GroceryListSchema | null>(
     null
@@ -72,11 +77,14 @@ export const GroceryList = ({ ingredients = [] }: GroceryListProps) => {
         <div className="bg-white p-6 rounded-xl border border-gray-100">
           <div className="flex items-center justify-between mb-4">
             <h3 className="text-lg font-semibold mb-4">Grocery List</h3>
-            {user && (
-              <Button className="bg-green transition-colors duration-300 text-white">
-                Add to GroceryList
-              </Button>
-            )}
+            {/* {user && (
+              <GroceryListStatus
+                title={title}
+                ingredients={groceryList}
+                userId={user.id}
+                recipeId={recipeId}
+              />
+            )} */}
           </div>
           <ul className="space-y-3">
             {groceryList.map((ingredient, index) => (

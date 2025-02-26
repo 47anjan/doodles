@@ -23,23 +23,14 @@ model FavoriteRecipe {
   title     String   @db.VarChar(255)
 }
 
-model GroceryItem {
-  id           Int      @id @default(autoincrement())
-  ingredientId Int
-  checked      Boolean  @default(false)
-  name         String
-  createdAt    DateTime @default(now())
-  updatedAt    DateTime @updatedAt
-
-  GroceryList GroceryList[]
-}
-
 model GroceryList {
-  id           Int           @id @default(autoincrement())
-  userId       String
-  recipeId     Int
-  createdAt    DateTime      @default(now())
-  updatedAt    DateTime      @updatedAt
-  title        String        @db.VarChar(255)
-  groceryItems GroceryItem[]
+  id          Int      @id @default(autoincrement())
+  userId      String
+  recipeId    Int
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  title       String   @db.VarChar(255)
+  ingredients Json
+
+  @@map("grocery_lists")
 }
