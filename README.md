@@ -1,6 +1,3 @@
-Here's the updated README incorporating the new features and improvements:
-
-````markdown
 # Recipe Discovery App 🍳
 
 Welcome to our AI-Powered Recipe Discovery App! Discover, cook, and interact with recipes using cutting-edge AI features. This application helps food enthusiasts explore global cuisines, get cooking assistance, and manage their culinary journey.
@@ -12,19 +9,7 @@ Welcome to our AI-Powered Recipe Discovery App! Discover, cook, and interact wit
   - **Recipe Chat**: Ask detailed questions about ingredients, substitutions, and cooking methods
   - **Ingredient Chat**: Get nutritional insights and usage suggestions for any ingredient
   - **Step-by-Step Guidance**: Interactive cooking instructions with real-time help
-
-- **Smart Discovery**:
-
-  - **AI-Powered Search**: Find recipes using natural language queries
-  - **Dietary Adaptation**: Automatic recipe modification for dietary restrictions
-  - **Personalized Recommendations**: AI-curated suggestions based on your preferences
-
-- **User Experience**:
-
-  - **Secure Authentication**: Powered by Clerk with social login support
-  - **Smart Favorites**: Save recipes with AI-generated reminders
-  - **Cooking Progress Tracker**: Interactive timeline with AI tips
-  - **Real-Time Notifications**: Get updates on cooking milestones
+  - **Grocery Generate**: Generate grocery list from the recipe
 
 - **Core Features**:
   - **Global Recipe Database**: 500,000+ recipes via Spoonacular API
@@ -55,11 +40,11 @@ Welcome to our AI-Powered Recipe Discovery App! Discover, cook, and interact wit
 ## 🚀 Getting Started
 
 1. **Clone Repository**
+
    ```bash
    git clone https://github.com/47anjan/doodles.git
    cd doodles
    ```
-````
 
 2. **Install Dependencies**
 
